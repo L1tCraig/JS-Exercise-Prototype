@@ -93,10 +93,16 @@ Person.prototype.toString = function(){
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby(name, age, favoriteToy) {
-   Person.call(this, name, age)
-  }
- 
+  function Baby(name, age, favoriteToy) {
+    Person.call(this, name, age);
+    this.favoriteToy = favoriteToy;
+  };
+  Baby.prototype = Object.create(Person.prototype);
+  Baby.prototype.play = function(){
+    return(`Playing with ${this.favoriteToy}`);
+  };
+     // here this function allows for the baby being referenced  to have .favoriteToy 
+   // key with a toy
   
   /* 
     TASK 4
