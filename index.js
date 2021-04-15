@@ -107,10 +107,10 @@ Person.prototype.toString = function(){
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Global usage of this will either target the window or undefined if strict
+    2. implicitly this will point to what is left of the . when calling the function
+    3. you can explicitly direct this with bind call or apply
+    4. new binding: this doesnt have to point to somethig its in. this can point to itself and serve as a placeholder for an object to come.
   */
   
   
