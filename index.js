@@ -39,16 +39,26 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
-    
-  }
- 
- 
+ function Person(name, age){
+ this.age = age;            // the name and age are being added to 
+ this.name = name;          // 'this'(when this is declared) as 
+ this.stomach = [];         // keys of .age and .name
+}
 
-  
-  
-  
-  
+Person.prototype.eat = function(food){                   
+  this.stomach.length !== 10? this.stomach.push(food):null 
+// 'hey is the persons stomach contents not ten? well if not then .eat will run.
+}                                         
+
+Person.prototype.poop = function(){
+  this.stomach = [];                      // a function is added to remove
+}                                         // all contents of .stomach
+
+Person.prototype.toString = function(){
+  return `${this.name}, ${this.age}`            // a function to return
+}                                                   // a name and age as 
+                                                    // requested.
+
   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -63,10 +73,17 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+   this.model = model;
+   this.milesPerGallon = milesPerGallon;
+   this.tank = 0;
+   this.odometer = 0;
+   // here a car maker that is an object with a model mpg tank and odo
   }
-  
+  Car.prototype.fill = function(gallons){
+    this.tank = this.tank + gallons;
+    // now using .fill(5) will add five gallons to the tank key for the obj.
+  }
   
   /*
     TASK 3
