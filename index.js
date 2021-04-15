@@ -46,8 +46,9 @@ function Airplane(name) {
 }
 
 Person.prototype.eat = function(food){                   
-  this.stomach.length !== 10? this.stomach.push(food):null 
-// 'hey is the persons stomach contents not ten? well if not then .eat will run.
+  this.stomach.length !== 10? this.stomach.push(food):null;
+// 'hey is the persons stomach contents not ten? well if not then .eat will run. but
+// if it does return null
 }                                         
 
 Person.prototype.poop = function(){
@@ -92,8 +93,8 @@ Person.prototype.toString = function(){
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age)
   }
  
   
